@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/Ashung/android-res-export-figma.git"
   },
-  "author": "Ashung Hung",
+  "author": "Rémy Dumas",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Ashung/android-res-export-figma/issues"
