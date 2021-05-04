@@ -1,0 +1,70 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js publish
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  14.15.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:136925:13)
+      at Interface.emit (events.js:315:20)
+      at Interface._ttyWrite (readline.js:875:16)
+      at ReadStream.onkeypress (readline.js:213:10)
+      at ReadStream.emit (events.js:315:20)
+      at emitKeys (internal/readline/utils.js:345:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1144:36)
+      at ReadStream.emit (events.js:315:20)
+      at addChunk (_stream_readable.js:309:12)
+
+npm manifest: 
+  {
+    "name": "Enma",
+    "version": "1.1.1",
+    "description": "Figma plugin for Relate project.",
+    "main": "index.js",
+    "scripts": {
+      "watch": "npx webpack --mode=development --watch",
+      "publish": "npx webpack --mode=production",
+      "update_typings_file": "curl -O https://www.figma.com/plugin-docs/figma.d.ts"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Ashung/android-res-export-figma.git"
+    },
+    "author": "Ashung Hung",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/Ashung/android-res-export-figma/issues"
+    },
+    "homepage": "https://github.com/Ashung/android-res-export-figma",
+    "dependencies": {
+      "axios": "^0.21.1",
+      "jszip": "^3.4.0"
+    },
+    "devDependencies": {
+      "css-loader": "^3.5.3",
+      "html-webpack-inline-source-plugin": "0.0.10",
+      "html-webpack-plugin": "^3.2.0",
+      "style-loader": "^1.2.1",
+      "ts-loader": "^6.2.2",
+      "typescript": "^3.8.3",
+      "webpack": "^4.43.0",
+      "webpack-cli": "^3.3.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
