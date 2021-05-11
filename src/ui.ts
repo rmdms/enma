@@ -45,13 +45,13 @@ window.onmessage = async (event) => {
     const jsonStr = JSON.stringify(datas);
     const jsonB64 = Buffer.from(jsonStr).toString("base64");
     // GITHUB
-    // const username = 'rmdms';
-    // const password = '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';
-    const username = 'melanieterzic';
-    const password = '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';
+    const username = 'rmdms';
+    const password = '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';
+    // const username = 'melanieterzic';
+    // const password = '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';
     const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64');
-    // const url = 'https://api.github.com/repos/rmdms/Memoire-DMII/';
-    const url = 'https://api.github.com/repos/melanieterzic/relate/';
+    const url = 'https://api.github.com/repos/rmdms/relate/';
+    // const url = 'https://api.github.com/repos/melanieterzic/relate/';
     const path = 'assets/datas/content.json';
 
     await axios.get(`${url}commits`, {
@@ -78,129 +78,4 @@ window.onmessage = async (event) => {
         console.log(error)
         window.parent.postMessage({ pluginMessage: error }, '*')
     })
-
-
-    // const commits = await axios.get(`${url}commits`, {
-    //     headers: {
-    //         'Accept': 'application/vnd.github.v3+json',
-    //         'Authorization': `Basic ${token}`
-    //     },
-    // });
-    // const sha = await getSha(token, commits.data[0].commit.tree, path);
-    // axios.put(`${url}contents/${path}`, {
-    //     message: 'Test',
-    //     content: jsonB64,
-    //     sha: sha
-    // }, {
-    //     headers: {
-    //         'Accept': 'application/vnd.github.v3+json',
-    //         'Authorization': `Basic ${token}`
-    //     },
-    // }).then(response => {
-    //     window.parent.postMessage({ pluginMessage: response.data }, '*')
-    // }).catch(error => {
-    //     console.log(error)
-    //     window.parent.postMessage({ pluginMessage: error }, '*')
-    // })
-
-    // axios.get(`${url}/commits`, {
-    //     headers: {
-    //         'Accept': 'application/vnd.github.v3+json',
-    //         'Authorization': `Basic ${token}`
-    //     },
-    // }).then(response => {
-    //     console.log(response.data[0].commit.tree.url)
-    //     axios.get(response.data[0].commit.tree.url, {
-    //         headers: {
-    //             'Accept': 'application/vnd.github.v3+json',
-    //             'Authorization': `Basic ${token}`
-    //         },
-    //     }).then(response => {
-    //         let urlTree = '';
-    //         response.data.tree.forEach(tree => {
-    //             if (tree.path === 'assets') {
-    //                 urlTree = tree.url;
-    //             }
-    //         });
-    //         console.log(urlTree)
-    //         axios.get(urlTree, {
-    //             headers: {
-    //                 'Accept': 'application/vnd.github.v3+json',
-    //                 'Authorization': `Basic ${token}`
-    //             },
-    //         }).then(response => {
-    //             let urlTree = '';
-    //             response.data.tree.forEach(tree => {
-    //                 if (tree.path === 'datas') {
-    //                     urlTree = tree.url;
-    //                 }
-    //             });
-    //             console.log(urlTree)
-    //             axios.get(urlTree, {
-    //                 headers: {
-    //                     'Accept': 'application/vnd.github.v3+json',
-    //                     'Authorization': `Basic ${token}`
-    //                 },
-    //             }).then(response => {
-    //                 let sha = '';
-    //                 response.data.tree.forEach(tree => {
-    //                     if (tree.path === file) {
-    //                         sha = tree.sha;
-    //                     }
-    //                 });
-    //                 console.log(sha)
-    //                 axios.put(`${url}/contents/assets/datas/${file}`, {
-    //                     message: 'Test',
-    //                     content: jsonB64,
-    //                     sha: sha
-    //                 }, {
-    //                     headers: {
-    //                         'Accept': 'application/vnd.github.v3+json',
-    //                         'Authorization': `Basic ${token}`
-    //                     },
-    //                 }).then(response => {
-    //                     window.parent.postMessage({ pluginMessage: response.data }, '*')
-    //                 }).catch(error => {
-    //                     console.log(error)
-    //                     window.parent.postMessage({ pluginMessage: error }, '*')
-    //                 })
-    //             }).catch(error => {
-    //                 window.parent.postMessage({ pluginMessage: error }, '*')
-    //             })
-    //         }).catch(error => {
-    //             window.parent.postMessage({ pluginMessage: error }, '*')
-    //         })
-    //     }).catch(error => {
-    //         window.parent.postMessage({ pluginMessage: error }, '*')
-    //     })
-    // }).catch(error => {
-    //     window.parent.postMessage({ pluginMessage: error }, '*')
-    // })
-
-    // axios.get(url, {
-    //     headers: {
-    //         'Accept': 'application/vnd.github.v3+json',
-    //         'Authorization': `Basic ${token}`
-    //     },
-    // }).then(response => {
-    //     console.log(response.data)
-    //     window.parent.postMessage({ pluginMessage: response.data }, '*')
-    // }).catch(error => {
-    //     window.parent.postMessage({ pluginMessage: error }, '*')
-    // })
-
-    // axios.put(`${url}contents/${path}`, {
-    //     message: 'Test',
-    //     content: jsonB64
-    // }, {
-    //     headers: {
-    //         'Accept': 'application/vnd.github.v3+json',
-    //         'Authorization': `Basic ${token}`
-    //     },
-    // }).then(response => {
-    //     window.parent.postMessage({ pluginMessage: response.data }, '*')
-    // }).catch(error => {
-    //     console.log(error)
-    //     window.parent.postMessage({ pluginMessage: error }, '*')
-    // })
 }
